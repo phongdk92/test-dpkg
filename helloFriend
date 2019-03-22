@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# sudo apt --fix-broken install
+date
+name=$1
+
+cd /var/local/test-dpkg
+python src/main.py ${name}
