@@ -1,4 +1,4 @@
 # This file indicates which file will be installed into which folder.
-helloFriend usr/bin/
+helloFriend /usr/bin/
 src /var/local/test-dpkg
 

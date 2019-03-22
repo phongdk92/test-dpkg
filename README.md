@@ -16,12 +16,12 @@ test-dpkg/
 
 ### 2. For a new project 
 
-Run dch --create in the directory to create a properly formatted debian/changelog entry.
+Run dch --create in the directory to create a properly formatted `debian/changelog` entry.
 
 ```
 dch --create
 ```
-This will output
+The file `debian/changelog` is created with the following content
 ```
 PACKAGE (VERSION) UNRELEASED; urgency=medium
 
@@ -29,7 +29,7 @@ PACKAGE (VERSION) UNRELEASED; urgency=medium
 
  -- phongdk <phongdk@ubuntu.local>  Fri, 22 Mar 2019 15:01:38 +0700
 ```
-We have to define **PACKAGE** and **VERSION**
+We have to define it **PACKAGE** and **VERSION**
 ```
 test-dpkg (0.1) UNRELEASED; urgency=medium
 ```
@@ -51,7 +51,7 @@ License: (GPL-2+ | LGPL-2 | GPL-3 | whatever)
  Unless there is a it can be found in /usr/share/common-licenses
 ```
 
-- debina/compat
+- debina/compat (This should be)
 
 ```
 7
@@ -91,7 +91,7 @@ Description: short description
 - debian/install (This file indicates which file will be installed into which folder.)
 
 ```
-helloFriend usr/bin/
+helloFriend /usr/bin/
 src /var/local/test-dpkg
 ```
 
@@ -107,14 +107,23 @@ This will create a functional deb package. Lintian is going to throw a few warni
 The `test-dpkg_0.1_all.deb` is located at `~/workspace/`
 
 ### 5. Install from package
-This package now can be delivered to other machines and installed.
+The `test-dpkg_0.1_all.deb` package now can be delivered to other machines and installed.
 
 ```
 $ sudo dpkg -i test-dpkg_0.1_all.deb
 $ sudo apt-get install -f test-dpkg_0.1_all.deb
 ```
 
-### 6. Notes
+### 6. Test script
+
+```
+$ helloFriend Rob
+Thứ sáu, 22 Tháng 3 năm 2019 17:09:20 +07
+Hello World: @phongdk
+Hello Rob
+```
+
+### 7. Notes
 Since in *debian/control*, it is required to install some dependencies, e.g python-appindicator, we have to install it ahead
 
 ```
